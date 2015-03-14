@@ -1,0 +1,23 @@
+// VALORABSOLUTO1.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main()
+
+{   int a;
+    cout<< "ingrese el valor de a: ";
+    cin>> a;
+	if (a>=0)
+	   if (a==0)
+		   cout<< "es cero ";
+	   else
+		   cout<< "es positivo ";
+	else 
+	cout<< "es negativo ";
+
+	getch();
