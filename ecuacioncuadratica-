@@ -23,7 +23,7 @@ if (D==0)
 x=-b/2*(a);
 cout<<"hay una solucion"<<x;
 }
-else {
+else 
 xr=-b/2*(a);
 cout<<"es real:";
 xi=sqrt(-D)/2*(a);
