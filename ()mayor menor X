@@ -1,0 +1,29 @@
+#include "stdafx.h"
+#include<iostream>
+#include "conio.h"
+using namespace std;
+
+int main()
+{
+	int a,n,i=1;
+	cout<< "ingrese la cantidad de numeros:";
+	cin>> n;
+	cout<< "numero";
+	cin>> a;
+	max=a;
+    min=a;
+	for (i=1,n-1,i++)
+	{
+		cout<<"ingrese numero:";
+		cin>> a;
+	 if (a>max)
+		 max=a;
+     if (a<min)
+		 min=a;
+	}
+    cout<<"el numero menor es:"<<min;
+	cout<<"el numero mayor es:"<<max;
+	getch();
+	return 0;
+}
+
