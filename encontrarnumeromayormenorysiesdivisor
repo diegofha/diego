@@ -1,0 +1,30 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+
+void main () 
+{int a,b,mayor,menor;
+cout<<"ingrese dos numero:";
+cin>>a;
+cin>>b;
+
+if (a<b)
+{mayor=b;
+ menor=a;
+}
+else 
+{mayor=a;
+ menor=b;
+}
+  
+if  ((mayor%menor)==0)
+  {cout<<"el numero es divisor";
+}
+else
+{  cout<<"el numero no es divisor";
+}
+getch();
+
+}
+
