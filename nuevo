@@ -1,0 +1,20 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std;
+void main()
+{float x;
+int n,i,s,signo;
+cout<<"ingrese x :";
+cin>>x;
+cout<<"ingrese cantidad de numeros:";
+cin>>n;
+s=0;
+signo=1;
+while (i=1,i<=n)
+	{s=s+signo*pow(x,i);
+	 signo=signo*(-1);
+}
+cout<<"la sumatoria es:"<<s<<endl;
+getch();
+}
