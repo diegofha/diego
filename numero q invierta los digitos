@@ -1,0 +1,10 @@
+Proceso sin_titulo
+	Leer n
+	i<-1
+    escribir "introdusca numeros"
+	leer nu
+	k1= nu mod 10=0
+	d1=n/10
+	r=(k1*10)+d1
+	Escribir "el numero total es:", a
+FinProceso
