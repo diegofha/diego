@@ -8,3 +8,15 @@ Proceso sin_titulo
 	r=(k1*10)+d1
 	Escribir "el numero total es:", a
 FinProceso
+
+Proceso invercion de numeros de dos cifras
+
+
+    escribir "introdusca numeros"
+	leer nu
+	k1= nu mod 10
+	d1=nu/10
+	r=(k1*10)+d1
+	Escribir "el numero total es:",r
+FinProceso
+
