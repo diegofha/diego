@@ -1,0 +1,23 @@
+Proceso sin_titulo
+	Leer n
+	i=0
+	ca=0 
+	cb=0
+	sa=0 
+	sb=0
+	Mientras i<=n Hacer
+		Leer s
+		Leer a
+		Si a>5 Entonces
+			sa=sa+s
+			ca=ca+1
+		Sino
+			sb=sb+s
+			cb=cb+1
+		FinSi
+		i=i+1
+	FinMientras
+	pma5=sa/ca
+	pme5=sb/cb
+FinProceso
+
