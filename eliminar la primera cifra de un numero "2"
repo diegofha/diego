@@ -1,0 +1,12 @@
+Proceso eliminarprimeracifra
+	Leer num
+	nu=0
+	c=1
+	Mientras num>10 Hacer
+		r=num mod 10
+		nu=nu+r*c
+		c=c*10
+		num=trunc(num/10)
+	FinMientras
+	Escribir nu
+FinProceso
