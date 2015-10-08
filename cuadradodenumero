@@ -1,0 +1,12 @@
+#include "stdafx.h"
+
+
+
+int main ()
+{int n,c;
+ scanf("%i",&n);
+ c=n*n;
+ printf("%i",c);
+ 
+ return 0;
+}
