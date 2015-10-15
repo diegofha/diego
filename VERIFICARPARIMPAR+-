@@ -1,0 +1,49 @@
+#include "stdafx.h"
+
+
+int main()
+{int n,p;
+int i;
+i=1;
+	while (i<=100)
+	{
+     scanf("%i",&n);
+	 p=n%2;
+	
+if (n==0)
+  {
+	printf("el numero es neutro");
+  }
+else 
+{
+	if (n>0)
+	{
+		if (p==0)
+		{
+		printf("el numero es par positivo");
+		}
+		else
+		{
+			printf("el numero es impar positivo");
+		}
+	}
+	else 
+	{
+		if (n<0)
+		{
+			if ( p==0)
+			{
+				printf ("el numero es par negativo");
+			}
+			else 
+			{ 
+				printf ("el  numero es impar negativo");
+	             		}
+			}
+	     }
+ }
+  i++;
+}
+
+return 0;
+}
