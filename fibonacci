@@ -1,0 +1,19 @@
+#include "stdafx.h"
+
+
+int main()
+{	int a,b,c,i,n;
+	scanf("%i", &n);
+	a=1;
+	b=1;
+	printf ("%i", a);
+	n=n-1;
+	for (i=1; i<=n; i++)
+{	printf (" %i ", b);
+	c=a+b;
+	a=b;
+	b=c;
+}
+	return 0;
+}
+
