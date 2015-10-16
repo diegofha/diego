@@ -1,0 +1,25 @@
+#include "stdafx.h"
+
+
+int main ()
+{ int num,n=0,r;
+  
+       
+    scanf("%i",&num);   
+ 
+    while (num>0)
+	{  
+		n=(n*10)+ (num%10);
+		num=num/10;
+
+	}
+	printf("%i \n",n);
+	int a=0;
+	n=n-(n%10);
+	while (n>0)
+	{ a=(a*10)+(n%10);
+	  n=n/10;
+	}
+	printf("%i",a);
+	return 0;
+}
