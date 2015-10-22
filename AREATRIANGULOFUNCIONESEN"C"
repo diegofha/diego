@@ -1,0 +1,15 @@
+#include "stdafx.h"
+int triangulo(int b,int h)
+{
+	int t;
+	t=(b*h)/2;
+	return t;
+}
+
+int funciones ()
+{ int b,h,t;
+scanf("%i",&b);
+scanf("%i",&h);
+t=triangulo(b,h);
+	return 0;
+}
