@@ -1,0 +1,9 @@
+Proceso area
+	Leer b,h
+	t=triangulo(b,h)
+	escribir t
+FinProceso
+
+SubProceso t <- triangulo ( b,h )
+	t=(b*h)/2
+Fin SubProceso
