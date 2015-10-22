@@ -1,0 +1,58 @@
+#include "stdafx.h"
+
+int cuadrado(int l)
+{int ac;
+ ac=l*l;
+ return ac;
+}
+
+int triangulorectangulo(int base,int altura)
+{int tr;
+ tr=(base*altura)/2;
+ return tr;
+}
+
+float areacirculo(float r)
+{float pi,acir;
+ pi=3.14;
+ acir=pi*r*r;
+ return acir;
+}
+
+int main()
+{ int op,tr,acir,ac,base,altura,r,l;
+  printf("~~~~~~~~~MENU~~~~~~~~~~~\n");
+  printf("1.-area del cuadrado\n ");
+  printf("2.-area de triangulorectangulo\n ");
+  printf("3.-area del circulo \n ");
+  printf("4.-salir \n ");
+  printf("digite una opcion\n ");
+  scanf("%i",&op);
+  switch(op)
+  {
+  case 1:{
+	  printf("ingrese lado:");
+	     scanf("%i",&l);
+
+         ac=cuadrado(l);
+         printf("%i",ac);
+          }break;
+  case 2:{
+	  printf("ingrese base y altura");
+	     scanf("%i",&base);
+         scanf("%i",&altura);
+         tr=triangulorectangulo(base,altura);
+         printf("%i",tr);
+		 }break;
+  case 3:{
+	  printf("ingrese radio ");
+	     scanf("%i",&r);
+         acir=areacirculo(r);
+         printf("%i",acir);
+         }break;
+  case 4:{
+	  printf("salir");
+		 }break;
+}
+  return 0;
+}
