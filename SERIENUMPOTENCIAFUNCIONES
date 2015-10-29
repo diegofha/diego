@@ -1,0 +1,27 @@
+#include "stdafx.h"
+int potencia(int x,int y)
+{int p=1;
+int i=1;
+while (i<=y){
+	p=p*x;
+	i=i+1;
+}
+return p;
+}
+
+int main()
+{int x,b,n,i,E;
+printf("introdusca n : \n");
+scanf("%i",&n);
+E=2;
+i=1;
+while(i<=n)
+{
+	x=potencia(i,E);
+	printf("%i \n",x);
+	E=E+2;
+	i=i+1;
+}	
+	return 0;
+
+}
