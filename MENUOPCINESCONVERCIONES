@@ -1,0 +1,64 @@
+//diseñar menu de opciones para convertir de grados farenheit a celcius
+//de celcius  a farenheit y de celcius a kelvin
+//f=c*9/5+32
+//c=(f-32)/(1.8)
+//k=c+273
+#include "stdafx.h"
+
+float funcionfarencel(float f)
+{
+
+	
+	return (f-32)/(1.8);
+}
+float funcioncelfaren(float c)
+{
+
+	
+	return (c*9/5) + 32;
+}
+float funcioncelkelv(float c)
+{
+    
+    return c+273;
+}
+
+
+int main()
+{
+	float c,f,k;
+	int op;
+	printf("%s \n","------MENU------\n");
+	printf("%s \n","1.-conversion grados farenheit a celcius");
+	printf("%s \n","2.-conversion de grados celcius a farenheit");
+	printf("%s \n","3.-conversion de grados celcius a kelvin");
+	printf("%s \n","4.- salir");
+	printf("%s \n","elija una opcion");
+	scanf("%i",&op);
+	switch(op)
+	{
+	case 1:{
+		    printf("introdusca grados farenheit: ");
+	        scanf("%f",&f);
+			c=funcionfarencel(f);
+            printf("%f",c);
+		   } break;
+	case 2: {
+		    printf("introdusca grados celcius :");
+			scanf("%f",&c);
+			f=funcioncelfaren(c);
+			printf("%f",f);
+			}break;
+	case 3:{
+		    printf("introdusca grados celcius :");
+			scanf("%f",c);
+			k=funcioncelkelv(c);
+		    printf("%f",k);
+		   }break;
+	case 4:{
+		   printf("salir");
+		   }break;
+	}
+	return 0;
+}
+
