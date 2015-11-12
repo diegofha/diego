@@ -1,0 +1,75 @@
+#include "stdafx.h"
+float promedioAprobados(int n)
+{
+	int nota,i;
+	float p,s,c;
+	i=1;
+	s=0; c=0;
+	while(i<=n)
+	{
+	 printf("Nota:");
+	 scanf("%i",&nota);
+	 if(nota >=51)
+	 {
+       s=s + nota;
+	   c=c+1;
+	 }
+	 i=i+1;
+	}
+	p=s/c;
+	return p;
+}
+
+float promedioReprobados(int n)
+{
+	int nota;
+	float p,s,c;
+	int i=1;
+	s=0; c=0;
+	while(i<=n)
+	{
+	 printf("Nota:");
+	 scanf("%i",&nota);
+	 if(nota <51)
+	 {
+       s=s + nota;
+	   c=c+1;
+	 }
+	 i=i+1;
+	}
+	p=s/c;
+	return p;
+}
+
+int main()
+{
+  int n,op;
+  float a,r;
+  do
+  {
+  printf("%s \n","--------------MENU--------------");
+  printf("%s \n","1.Calcular promedio aprobados");
+  printf("%s \n","2.Calcular promedio reprobados");
+  printf("%s \n","3.Nota MEJOR alumno");
+  printf("%s \n","4.Salir");
+  printf("%s \n","--------------------------------");
+  printf("%s ","Elejir una opcion:");
+  scanf("%i",&op);
+  printf("Cantidad de notas:");
+  scanf("%i",&n);
+  switch(op){
+  case 1:{
+		  a=promedioAprobados(n);
+		  printf("Promedio aprobados: %f",a);
+		 }break;
+  case 2:{
+		  r=promedioReprobados(n);
+		  printf("Promedio reprobados: %f",r);
+		 }break;
+  case 3:{
+		 printf("tem que facer voce sozinho");
+		 }break;    
+  } //end switch 
+ }while(op != 4);
+ return 0;
+}
