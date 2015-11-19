@@ -1,0 +1,28 @@
+#include "stdafx.h"
+void cargar(int v[],int n)
+{int x,i;
+	for(i=0;i<=n-1;i++)
+	{printf("elemento:");
+	scanf("%i",&x);
+	v[i]=x;
+	
+	}
+}
+	void mostrar(int v[],int n)
+	{int i;
+		for(i=0;i<=n-1;i++)
+		{
+		printf("%i",v[i]);
+	    }
+	}
+int main()
+{
+	int v[50];
+	int n,x,i;
+	printf("introdusca cantidad de elementos");
+	scanf("%i",&n);
+	cargar(v,n);
+	mostrar(v,n);
+	
+	return 0;
+}
