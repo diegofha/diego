@@ -1,0 +1,68 @@
+#include "stdafx.h"
+void cargar(int v[],int n)
+{int x,i;
+	for(i=0;i<=n-1;i++)
+	{printf("elemento:");
+	scanf("%i",&x);
+	v[i]=x;
+	
+	}
+}
+	void mostrarpares(int v[],int n)
+	{int i=0;
+		for(i;i<=n-1;i++)
+		{
+			if( v[i]%2==0)
+			{
+		    printf("%i ",v[i]);
+			}
+		}
+	}
+	int funcionsumavectores(int v[],int n )
+	
+	{int s=0,i;
+	for(int i=0;i<=n-1;i++)
+	    {
+		s=s+v[i];
+	    }
+	 return s;
+    }
+	int funcionsumaparesvect(int v[],int n)
+	{int i,sp=0;
+		for(i=0;i<=n-1;i++)
+		{
+			if(v[i]%2==0)
+			{
+				sp=sp+v[i];
+			}
+		}
+		return sp;
+	} 
+	int funcioncantidadparesvect(int v[],int n)
+	{int i,cp=0;
+		for(i=0;i<n;i++)
+		{   if(v[i]%2==0)
+		     {
+			cp=cp+1;
+		     }
+		}
+		return cp;
+	}
+	int main()
+{
+	int v[50];
+	int n,x,i,s,sp,cp;
+	printf("introdusca cantidad de elementos");
+	scanf("%i",&n);
+	cargar(v,n);
+	printf("\n los pares son :\n");
+	mostrarpares(v,n);
+	s=funcionsumavectores(v, n);
+	printf("\n la suma total de elemntos es: %i ",s);
+	sp=funcionsumaparesvect( v, n);
+	printf("\n la suma de pares es: %i ",sp);
+	cp= funcioncantidadparesvect(v, n);
+	printf("\n la suma de cantidad de  pares es: %i ",cp);
+	return 0;
+}
+		
