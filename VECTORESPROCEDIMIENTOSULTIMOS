@@ -1,0 +1,74 @@
+#include "stdafx.h"
+void cargar(int v[],int n)
+{int x,i;
+for(i=0;i<n;i++)
+  {
+	printf("elemento: ");
+	scanf("%i",&x);
+	v[i]=x;
+  }
+}
+ void mostrar(int v[],int n)
+ {
+	 int x,i;
+	 for(i=0;i<n;i++)
+	 {
+		 printf(" %i ",v[i]);
+	 }
+ }
+ void intercambiar(int &a,int &b)
+ {
+	 int aux;
+	 aux=a;
+	 a=b;
+	 b=aux;
+ }
+ 
+void invertir(int v[],int n)
+{
+	int i,j;
+	i=0;
+	j=n-1;
+	while(i<j)
+	{
+		intercambiar(v[i],v[j]);//llamando proscedimientio??
+	    i=i+1;
+	    j=j-1;
+	}
+}
+
+ void insertar(int v[],int n,int x,int p)
+ {
+	 if (p<0 || p>n)
+	 {
+		 printf("posicion invalida");
+	 }
+	   else
+	  {int k=n-1;
+	    while(k>=p)
+	   {
+		 v[k+1]=v[k];
+		 k=k-1;
+	   }
+	 v[p]=x;
+	 n=n+1;
+	 }
+ }
+
+
+int main()
+{int v[50];
+ int n,x,p;
+ printf("cantidad de elementos:");
+ scanf("%i",&n);
+ cargar(v,n);
+ //invertir(v,n);//invertir antes de mostrar??????????
+ printf("que elementos desea insertar:");
+ scanf("%i",&x);
+ printf("en que posicion desea insertar:");
+ scanf("%i",&p);
+ insertar(v,n,x,p);
+ mostrar(v,n);
+
+	return 0;
+}
