@@ -1,0 +1,48 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+void menu(int n){
+	int a;
+	cout<<endl<<"1.-sumar los digitos del numero";
+	cout<<endl<<"2.-contar los digitos del numero";
+	cout<<endl<<"3.-salir";
+	cout<<endl<<"elija una opcion";
+	cin>>a;
+	}
+
+
+
+
+
+
+int digitos(int n){
+	int c=0,d;
+   while(n>0){
+	        d=n%10;
+	        n= n / 10;
+			
+			c=d+c;
+             }
+   return (c);
+   }
+
+void main(){
+	
+
+	int n,a,r;
+	do{
+		cout<<"introducir numero :";
+		cin>>a;
+		if(a<=0){
+			cout<<endl<<"el numero debe ser mayor a cero"<<endl;
+			getch();
+			
+		}
+	}while(a<=0);
+	    menu; 
+  		r=digitos(a);
+		cout<<"la suma de los digitos es:";
+		cout<<r;
+		getch();
+       }
