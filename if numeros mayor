@@ -1,0 +1,21 @@
+	int a,b;
+	cout<<"ingrese primer num ";
+	cin>>a;
+    cout<<"ingrese segundo num ";
+	cin>>b;
+	if (a>b){ 
+		cout<<"el numero mayor es:";
+		cout<<a;
+	        }
+	else{
+		if(b>a){
+
+		        cout<<"el numero mayor es:";
+		        cout<<b;
+		       }
+		else{
+			cout<<"los numeros son iguales";
+		    }
+     	}
+	getch();
+}
