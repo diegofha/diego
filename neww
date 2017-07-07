@@ -1,0 +1,130 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int factorial(int n){
+	if(n==0){
+		return 1;
+	}else{
+		int x=factorial(n-1);
+		return(x*n);
+	}
+}
+int contarpares(int n){
+	if(n==0){
+		return 0;
+
+	}else{
+		int x=contarpares(n-1);
+		if(n%2==0){
+		return(x+1);
+		}else{
+			return x;
+		}
+	}
+}
+int potencia(int x,int y){
+	if(y==0){
+		return 1;
+	}else{
+		int b=potencia(x,y-1);
+		return b*x;
+	}
+}
+
+int sumarcuadrados(int n){
+	if(n==0){
+		return 0;
+	}
+	int x=sumarcuadrados(n-1);
+	return x+(n*n);
+}
+int sumaserie(int n){
+	if(n==0){
+		return 0;
+	}
+	int x=sumaserie(n-1);
+	return x+(factorial(n)/n*n);
+}
+int sumavec(int v[],int n){
+if(n==1){
+	return v[0];
+}
+int x=sumavec(v,n-1);
+return(x+v[n-1]);
+}
+void cargar(int v[],int n){
+	int i,x;
+	for(i=0;i<n;i++){
+	cout<<"ingrese valor: ";
+	cin>>v[i];
+
+	}
+}
+void mostrar(int v[],int n){
+	int i;
+	for(i=0;i<n;i++){
+	
+	cout<<v[i]<<" ";
+
+	}
+}
+int contarnumpositivos(int v[],int n){
+	if(n==1){
+			return(v[0]>0);
+	}
+	int x=contarnumpositivos(v,n-1);
+	if(v[n-1]>0){
+		return(x+1);
+	}else{
+		return x;
+	}
+}
+
+int elementomayor(int v[],int n){
+	if(n==1){
+		return v[0];
+	}
+	int may=elementomayor(v,n-1);
+	if(v[n-1]>may){
+		return v[n-1];
+	}else{
+		return may;
+	}
+}
+bool existeelem(int v[],int n,int x){
+	if(n==1){
+		return v[0]==x;
+	}
+	bool r=existeelem(v,n-1,x);
+	if(r){
+		return true;
+	}else{
+		if(v[n-1]==x){
+			return true;
+		}else{
+			return false;
+		}
+	}
+}
+
+
+void main(){
+	int n,x,v[100];
+	cout<<"leer n:";
+	cin>>n;
+	cin>>x;
+	cargar(v,n);
+	mostrar(v,n);
+	cout<<endl<<"factorial:"<<factorial(n);
+	cout<<endl<<"contarpares:"<<contarpares(n);
+	cout<<endl<<"potencia:"<<potencia(n,x);
+	cout<<endl<<"sumar cuadrados:"<<sumarcuadrados(n);
+	cout<<endl<<"suma serie:"<<sumaserie(n);
+	cout<<endl<<"suma elementos:"<<sumavec(v,n);
+	cout<<endl<<"contar positivos:"<<contarnumpositivos(v, n);
+	cout<<endl<<"elemento mayor:"<<elementomayor(v, n);
+	cout<<endl<<"existe elemento 1.-si/0.- no  :"<<existeelem(v,n,x);
+	getch();
+}
