@@ -1,0 +1,72 @@
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+using namespace std;
+
+class numero{
+private:
+	int valor;
+	int sumardigrecursivo(int n){
+	if(n<10)
+		return n;
+	else{
+		int x=sumardigrecursivo(n-1);
+			return x+(n%10);
+    }
+}
+public :
+	numero(){
+		valor=0;
+	}
+	void setvalor(int n){   //funcion insertora
+		valor=n;
+	}
+	int getvalor(){   //funcion extractor
+		return valor;}
+	int sumardigitos(){
+	int n=valor,s=0;
+	while(n>0){
+		s=s+(n%10);
+		n=n/10;
+	 }
+	return(s);
+	}
+	int mayordigito();
+	int invertirdig(){
+		int n=valor,m=0;
+			while(n>0){
+				m=(m*10)+ (n%10);
+				n=n/10;
+	        }
+			return m;
+	}
+};
+
+/*int numero::sumardigrecursivo(){
+	return sumardigrecursivo(valor);
+}*/
+int numero::mayordigito(){
+	int may=0,n=valor;
+	while(n>0){
+	 if((n%10)>may){
+		may=n%10;
+	  }
+	n=n/10;
+   }
+	return(may);
+}
+
+int main(){
+	int num,s;
+	numero n1;//objeto de la clase numero
+	cout<<"numero :";
+	cin>>num;
+	n1.setvalor(num);
+	s=n1.sumardigitos();
+	cout<<"resultado:"<<s;
+	cout<<"\nel mayor digito es:"<<n1.mayordigito();
+	/*cout<<"\nla suma de dig es:"<<n1.sumardigrecursivo(num);*/
+	cout<<"\nel digito invertido es :"<<n1.invertirdig();
+	cout<<endl;
+	return 0;
+}
