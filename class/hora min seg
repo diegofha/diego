@@ -1,0 +1,117 @@
+
+#include "stdafx.h"
+#include "iostream"
+#include "conio.h"
+using namespace std;
+
+class hora{
+private:
+	int hor;
+	int min;
+	int seg;	
+public :
+	hora(){
+		hor=0;
+		min=0;
+		seg=0;
+	}
+	void sethor(int n){   //funcion insertora
+		hor=n;
+	}
+	void setmin(int n){   
+		min=n;
+	}
+	void setseg(int n){   
+		seg=n;
+	}
+	int gethor(){   //funcion extractor
+		return hor;}
+	int getmin(){   
+		return min;}
+	int getseg(){  
+		return seg;}
+	void aumentarhora(){
+		hor=hor+1;
+		if(hor==24){
+			hor=0;
+	    }
+	  
+	}
+	void aumentarmin(){
+		min=min+1;
+		if(min==60){ 
+		aumentarhora();
+		min=0;
+		}
+	}
+	void aumentarunseg(int segundos){
+	int c=1;
+	while(c<=segundos){
+		seg=seg+1;
+		if(seg==60){ 
+		aumentarmin();
+		seg=0;
+		}
+		c=c+1;
+	 }
+	}
+	void leer(){
+	
+	int hora,mint,segd;
+	cout<<"hora:"<<endl;
+	cin>>hora;
+	hor1.sethor(hora);
+	cout<<"minutos:"<<endl;
+	cin>>mint;
+	min1.setmin(mint);
+	cout<<"segundos:";
+	cin>>segd;
+	seg1.setseg(segd);
+}
+	void mostrar(){
+		hora hor1,min1,seg1;
+	    
+        if(hor1.gethor()<10)
+        cout<<"0"<<hor1.gethor()<<":";
+	    else
+		cout<<hor1.gethor()<<":";
+	    if(min1.getmin()<10)
+	    cout<<"0"<<min1.getmin()<<":";
+	    else
+		cout<<min1.getmin()<<":";
+		if(seg1.getseg()<10)
+		cout<<"0"<<seg1.getseg();
+		else
+		cout<<seg1.getseg()<<endl;
+}
+	void aumentarsegundos(int segdos);
+};
+
+    void hora::aumentarsegundos(int segdos){
+	int hras,mins,segs,totalseg
+	hras=gethra();
+	mins=getmin();
+	segs=getseg();
+	totalseg=(hras*3600)+(mis*60)+(segs+segdos);
+	hras=totalseg/3600;
+	mins=(totalseg%3600)/60;
+	segs=totalseg%60;
+	sethor(hras);
+	setmin(mins);
+	setseg(segs);
+	
+	}
+
+int main(){
+	hora hor1;//objeto de la clase numero
+	int segdos;
+	hor1.leer();
+	hor1.mostrar();
+	cout<<"\ningrese segundos para aumentar:";
+	cin>>segdos;
+	cout<<"la hora es:";
+	hor1.mostrar();
+
+	cout<<endl;
+	return 0;
+}
