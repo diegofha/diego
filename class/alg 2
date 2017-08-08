@@ -1,0 +1,138 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+#define FIL 20
+#define COL 20
+void cargar(int mat [FIL][COL],int n,int m){
+	int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			cout<<"introducir dato mat["<<i<<"]["<<j<<"]:";
+			cin>>mat[i][j];
+		}
+	}
+}
+void mostrar(int mat[FIL][COL],int n,int m){
+int i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+			cout<<mat[i][j]<<" ";
+          }
+		cout<<endl;
+	}
+}
+void sumar(int mat[FIL][COL],int n,int m,int matb[FIL][COL],int b,int c,int matc[FIL][COL],int &d,int &f){
+     if(n==b && m==c){
+		 d=n;
+		 f=c;
+     for(int i=0;i<n;i++){
+		 for(int j=0;j<m;j++){
+			 matc[i][j]=mat[i][j]+matb[i][j];
+			 }
+		 }	 
+   }else{
+cout<<"\nno es posible la suma ,son de diferente tamaños\n";
+}
+}
+
+void multiplicacion(int mat[FIL][COL],int n,int m,int matb[FIL][COL],int b,int c,int matc[FIL][COL],int &d,int &f){
+	if(m==b){
+    for (int i=0;i<n;i++){
+		for (int j=0;j<c;j++){
+			matc[i][j]=0;
+           for (int k=0;k<m;k++){
+			   matc[i][j]=matc[i][j]+mat[i][k]*matb[k][j];
+
+          }
+
+       }
+
+   }
+	d=n;
+	f=c;
+}else{
+cout<<"\nno es posible la multiplicacion por las dimensiones";
+	}
+}
+
+
+
+int casillanum(int mat[][],int n,int m)
+int i,b,may=0;
+for(i=a;i<n;i++){
+	if(v[i]>may){
+		may=v[i];
+		b=i;
+	}
+}return(b);
+}
+int obtenermayor(int mat[FIL][COL],int n,int m,int a,int b){
+int i,may=0;
+for(i=a;i<n;i++){
+	for(j=b;j<m;j++){
+	if(mat[i][j]>may)
+		may=mat[i][j];
+	}
+}
+return(may);
+}
+
+bool estadescendentemente(int mat[FIL][COL],int n,int m){
+	int men=99999,i,j;
+	for(i=0;i<n;i++){
+		for(j=0;j<m;j++){
+		if(mat[i][j]<men){
+		men=mat[i][j];
+		}else
+			return(false);
+		
+		}
+	}
+		return(true);
+}
+
+void ordenarsinmetodoordenacion(int v[],int n){
+int i=0,vec[100],num,aux,a;
+      do{
+		 
+        num=obtenermayor(v,n,i);
+		a=casillanum(v,n,i);
+		if(v[i]<num && v[i]!=num){
+		aux=v[i];
+		v[i]=num;
+		v[a]=aux;
+	   
+		}
+		i++;
+		
+	  }while(estadescendentemente(v,n)==false);
+}
+
+void main(){
+	int n,m,matriz[FIL][COL],matb[FIL][COL],nrob,nrocolb,matc[FIL][COL],nroc,nrocolc;
+	cout<<"\nnumero de filas?: ";
+	cin>>n;
+	cout<<"\nnumero de columnas? :";
+	cin>>m;
+    cout<<"\nnumero de filas matriz 2?: ";
+	cin>>nrob;
+	cout<<"\nnumero de columnas? :";
+	cin>>nrocolb;
+	cargar(matriz,n,m);
+	mostrar(matriz,n,m);
+	cout<<endl<<endl;
+	cargar(matb,nrob,nrocolb);
+	mostrar(matb,nrob,nrocolb);
+	cout<<endl<<endl;
+	/*sumar(matriz,n,m,matb,nrob,nrocolb,matc,nroc,nrocolc);
+	if(n==nrob && m==nrocolb){
+	mostrar(matc,nroc,nrocolc);
+	}*/
+	
+	multiplicacion( matriz,n,m,matb,nrob,nrocolb, matc, nroc, nrocolc);
+	if(m==nrob){
+		mostrar(matc,nroc,nrocolc);
+	}
+	getch();
+}
